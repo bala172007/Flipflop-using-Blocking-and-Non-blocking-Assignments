@@ -30,20 +30,51 @@ Close the Simulation Once done, by going to Simulation → "Close Simulation
 
 Input/Output Signal Diagram:
 
-D FF
+***D FF***
 
-SR FF
+***SR FF***
 
-JK FF
+***JK FF***
 
-T FF
+***T FF***
 
 
 RTL Code:
-
+***D Flip flop***
+```
+module dff ( clk, rst,d, q);
+input clk,rst,d;
+output reg q;
+    always @(posedge clk) begin
+        if (rst)   
+            q <= 1'b0;
+        else
+            q <= d;  
+    end
+endmodule
+```
 TestBench:
-
+***D Flip flop***
+```
+module dff_tb;
+    reg clk_t, rst_t, d_t;
+    wire q_t;
+    dff dut (.clk(clk_t),.rst(rst_t),.d(d_t),.q(q_t) );
+    initial begin
+        clk_t = 1'b0;
+        rst_t = 1'b1;  
+        d_t   = 1'b0;
+        #100 rst_t = 1'b0; 
+        #100 d_t = 1'b1;
+        #100 d_t = 1'b0;
+        #100 d_t = 1'b1;
+end
+     always #10 clk_t = ~clk_t;
+endmodule
+```
 Output waveform:
+***D Flip flop***
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6b64f624-5877-4ed9-b0c0-2ee916b3a40a" />
 
 Conclusion:
 
