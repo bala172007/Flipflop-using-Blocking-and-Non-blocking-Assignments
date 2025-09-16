@@ -28,7 +28,7 @@ Take screenshots of the waveform window and include them in your lab report to d
 You can include the timing diagram from the simulation window showing the correct functionality of the Seven Segment across different select inputs and data inputs. 
 Close the Simulation Once done, by going to Simulation → "Close Simulation
 
-Input/Output Signal Diagram:
+***Input/Output Signal Diagram:***
 
 ***D Flip Flop***
 
@@ -39,7 +39,7 @@ Input/Output Signal Diagram:
 ***T Flip Flop***
 
 
-RTL Code:
+***RTL Code:***
 
 ***D Flip flop***
 ```
@@ -101,7 +101,7 @@ module t_ff(clk,rst,Tout,T);
 endmodule
 ```
 
-TestBench:
+***TestBench:***
 
 ***D Flip flop***
 ```
@@ -190,7 +190,7 @@ module t_ff_tb;
 endmodule
 ```
 
-Output waveform:
+***Output waveform:***
 
 ***D Flip flop***
 
@@ -208,6 +208,6 @@ Output waveform:
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/b11eb968-0057-4f08-a393-7603c69bb030" />
 
-Conclusion:
+***Conclusion:***
 
 
