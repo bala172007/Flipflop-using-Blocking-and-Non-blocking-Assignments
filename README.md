@@ -32,11 +32,19 @@ Close the Simulation Once done, by going to Simulation → "Close Simulation
 
 ***D Flip Flop***
 
+<img width="495" height="246" alt="image" src="https://github.com/user-attachments/assets/a870e780-d46f-48ca-8321-d73a10e89acd" />
+
 ***SR Flip Flop***
+
+<img width="485" height="290" alt="image" src="https://github.com/user-attachments/assets/fe9aa70a-2a4a-4b7b-b171-79ad0689dfdd" />
 
 ***JK Flip Flop***
 
+<img width="453" height="283" alt="image" src="https://github.com/user-attachments/assets/dec9c5d2-cfa5-41ec-a92c-355cb944dcab" />
+
 ***T Flip Flop***
+
+<img width="483" height="270" alt="image" src="https://github.com/user-attachments/assets/f4fa2c9a-db72-4b47-928f-8690e39a65d9" />
 
 
 ***RTL Code:***
