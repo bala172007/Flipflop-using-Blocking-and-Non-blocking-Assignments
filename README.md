@@ -30,13 +30,13 @@ Close the Simulation Once done, by going to Simulation → "Close Simulation
 
 Input/Output Signal Diagram:
 
-***D FF***
+***D Flip Flop***
 
-***SR FF***
+***SR Flip Flop***
 
-***JK FF***
+***JK Flip Flop***
 
-***T FF***
+***T Flip Flop***
 
 
 RTL Code:
@@ -52,6 +52,21 @@ output reg q;
         else
             q <= d;  
     end
+endmodule
+```
+
+***SR Flip Flop***
+```
+module sr_ff (input clk,input S,input R,output reg Q);
+always @(posedge clk)
+ begin
+    case ({S,R})
+      2'b00: Q <= Q;    
+      2'b01: Q <= 0;    
+      2'b10: Q <= 1;    
+      2'b11: Q <= 1'bx; 
+ endcase
+ end
 endmodule
 ```
 
@@ -106,6 +121,27 @@ end
      always #10 clk_t = ~clk_t;
 endmodule
 ```
+***SR Flip Flop***
+```
+module sr_ff_tb;
+  reg clk, S, R;
+  wire Q;
+  sr_ff uut (.clk(clk),.S(S),.R(R),.Q(Q));
+  initial begin
+   clk = 0;
+  forever #10 clk = ~clk; 
+  end
+  initial begin
+    S = 0; R = 0;
+    #100 S = 1; R = 0;   
+    #100 S = 0; R = 0;   
+    #100 S = 0; R = 1;   
+    #100 S = 1; R = 1;  
+    #100 S = 0; R = 0;
+ end
+endmodule
+```
+
 ***JK Flip Flop***
 ```
 module tb_jk_ff;
@@ -157,7 +193,12 @@ endmodule
 Output waveform:
 
 ***D Flip flop***
+
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6b64f624-5877-4ed9-b0c0-2ee916b3a40a" />
+
+***SR Flip Flop***
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/c047331e-2b26-45ad-85cb-ee45880ead7f" />
 
 ***JK Flip Flop***
 
