@@ -56,9 +56,9 @@ input clk,rst,d;
 output reg q;
     always @(posedge clk) begin
         if (rst)   
-            q <= 1'b0;
+            q = 1'b0;
         else
-            q <= d;  
+            q = d;  
     end
 endmodule
 ```
@@ -69,10 +69,10 @@ module sr_ff (input clk,input S,input R,output reg Q);
 always @(posedge clk)
  begin
     case ({S,R})
-      2'b00: Q <= Q;    
-      2'b01: Q <= 0;    
-      2'b10: Q <= 1;    
-      2'b11: Q <= 1'bx; 
+      2'b00: Q = Q;    
+      2'b01: Q = 0;    
+      2'b10: Q = 1;    
+      2'b11: Q = 1'bx; 
  endcase
  end
 endmodule
@@ -83,10 +83,10 @@ endmodule
 module jk_ff(input clk,J,K, output reg Q);
 always @(posedge clk) begin
 case({J,K})
-2'b00: Q<=Q;
-2'b01: Q<=0;
-2'b10: Q<=1;
-2'b11: Q<=~Q;
+2'b00: Q=Q;
+2'b01: Q=0;
+2'b10: Q=1;
+2'b11: Q=~Q;
 endcase
 end
 endmodule
